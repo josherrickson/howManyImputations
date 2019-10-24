@@ -1,5 +1,6 @@
 # howManyImputations
-[![Travis build status](https://travis-ci.org/josherrickson/howManyImputations.svg?branch=master)](https://travis-ci.org/josherrickson/howManyImputations)
+[![Travis build status](https://travis-ci.org/josherrickson/howManyImputations.svg?branch=master)](https://travis-ci.org/josherrickson/howManyImputations)[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/josherrickson/howManyImputations?branch=master&svg=true)](https://ci.appveyor.com/project/josherrickson/howManyImputations)
+
 Implements "how_many_imputations" from von Hippel (2018). See https://missingdata.org/
 
 This can be installed via the `devtools` package:
