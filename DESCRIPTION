@@ -1,0 +1,19 @@
+Package: howManyImputations
+Type: Package
+Title: Implements "how_many_imputations" from von Hippel (2018)
+Version: 0.1.0
+Description: von Hippel (2018) provided Stata and SAS code for calculating how many 
+  imputations are needed for replicable SE estimates. This package provides a similar
+  function following imputation via the "mice" package.
+Authors@R: person("Josh", "Errickson", email = "josh@errickson.net",
+                  role = c("aut", "cre"))
+License: CC0
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    testthat (>= 2.1.0)
+RoxygenNote: 6.1.1
+Imports:
+  methods,
+  stats,
+  mice
