@@ -19,14 +19,13 @@ Here's an example:
 > library(howManyImputations)
 > library(mice)
 > data <- airquality
+> # Add some missingness
 > data[4:10,3] <- rep(NA,7)
 > data[1:5,4] <- NA
 > data <- data[-c(5,6)]
 > tempData <- mice(data,m=5,maxit=10,meth='pmm',seed=500)
 > modelFit1 <- with(tempData,lm(Temp~ Ozone+Solar.R+Wind))
 > how_many_imputations(modelFit1)
-[1] 72
-> how_many_imputations(pool(modelFit1))
 [1] 72
 > how_many_imputations(modelFit1, cv = .01)
 [1] 1767
