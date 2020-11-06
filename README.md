@@ -1,5 +1,5 @@
 # howManyImputations
-[![Travis build status](https://travis-ci.org/josherrickson/howManyImputations.svg?branch=master)](https://travis-ci.org/josherrickson/howManyImputations)[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/josherrickson/howManyImputations?branch=master&svg=true)](https://ci.appveyor.com/project/josherrickson/howManyImputations)
+[![R-build-check](https://github.com/josherrickson/howManyImputations/workflows/R-build-check/badge.svg)](https://github.com/josherrickson/howManyImputations/actions)
 
 Implements "how_many_imputations" from von Hippel (2018). See https://missingdata.org/
 
