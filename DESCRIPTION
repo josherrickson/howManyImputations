@@ -13,9 +13,8 @@ LazyData: true
 Suggests:
   testthat (>= 2.1.0),
   roxygen2
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.2
 Imports:
   methods,
   stats,
   mice
-  
