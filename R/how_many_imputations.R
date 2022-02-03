@@ -12,23 +12,32 @@
 #' @export
 #' @importFrom methods is
 #' @importFrom stats plogis qlogis qnorm
-#' @importFrom mice pool
+#' @importFrom mice mice as.mira pool
 #'
 #' @references von Hippel, Paul T. (2018)
 #' \sQuote{How Many Imputations Do You Need? A Two-stage Calculation Using a Quadratic Rule.},
 #' \emph{Sociological Methods & Research} p.0049124117747303.
 #'
 #' @examples
-#' library(mice)
-#' data <- airquality
-#' data[4:10,3] <- rep(NA,7)
-#' data[1:5,4] <- NA
-#' data <- data[-c(5,6)]
-#' tempData <- mice(data,m=5,maxit=10,meth='pmm',seed=500)
-#' modelFit1 <- with(tempData,lm(Temp~ Ozone+Solar.R+Wind))
+#' data(airquality)
+#' # Add some missingness
+#' airquality[4:10, 3] <- rep(NA, 7)
+#' airquality[1:5, 4] <- NA
+#' airquality <- airquality[-c(5, 6)]
+#' impdata1 <- mice::mice(airquality, m = 5, maxit = 10, method = 'pmm', seed = 500)
+#' modelFit1 <- with(impdata1, lm(Temp ~ Ozone + Solar.R + Wind))
 #' how_many_imputations(modelFit1)
-#' how_many_imputations(pool(modelFit1))
 #' how_many_imputations(modelFit1, cv = .01)
+#'
+#' # Using a non-`mice` library.
+#' library(jomo)
+#' library(mitools) # for the `imputationList` function
+#' jomodata <- jomo::jomo1(airquality, nburn = 100, nbetween = 100, nimp = 5)
+#' impdata2 <- mitools::imputationList(split(jomodata, jomodata$Imputation))
+#' modelfit2 <- with(impdata2, lm(Temp ~ Ozone + Solar.R + Wind))
+#' # Either can work:
+#' how_many_imputations(mice::as.mira(modelfit2))
+#' how_many_imputations(mice::pool(modelfit2))
 
 how_many_imputations <- function(model,
                                  cv = .05,

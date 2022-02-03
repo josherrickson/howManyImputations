@@ -23,13 +23,12 @@ Here's an example:
 
 ```{r}
 > library(howManyImputations)
-> library(mice)
-> data <- airquality
+> data(airquality)
 > # Add some missingness
-> data[4:10, 3] <- rep(NA, 7)
-> data[1:5, 4] <- NA
-> data <- data[-c(5, 6)]
-> impdata1 <- mice(data, m = 5, maxit = 10, method = 'pmm', seed = 500)
+> airquality[4:10, 3] <- rep(NA, 7)
+> airquality[1:5, 4] <- NA
+> airquality <- airquality[-c(5, 6)]
+> impdata1 <- mice(airquality, m = 5, maxit = 10, method = 'pmm', seed = 500)
 > modelFit1 <- with(impdata1, lm(Temp ~ Ozone + Solar.R + Wind))
 > how_many_imputations(modelFit1)
 [1] 72
@@ -47,7 +46,7 @@ imputation.
 ```{r}
 > library(jomo)
 > library(mitools) # for the `imputationList` function
-> jomodata <- jomo1(data, nburn = 100, nbetween = 100, nimp = 5)
+> jomodata <- jomo1(airquality, nburn = 100, nbetween = 100, nimp = 5)
 > impdata2 <- imputationList(split(jomodata, jomodata$Imputation))
 > modelfit2 <- with(impdata2, lm(Temp ~ Ozone + Solar.R + Wind))
 > # Either can work:

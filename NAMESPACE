@@ -2,6 +2,8 @@
 
 export(how_many_imputations)
 importFrom(methods,is)
+importFrom(mice,as.mira)
+importFrom(mice,mice)
 importFrom(mice,pool)
 importFrom(stats,plogis)
 importFrom(stats,qlogis)
