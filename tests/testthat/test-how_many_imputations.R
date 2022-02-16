@@ -1,4 +1,4 @@
-test_that("multiplication works", {
+test_that("basic results", {
   library(mice)
   data <- airquality
   data[4:10,3] <- rep(NA,7)
@@ -21,4 +21,18 @@ test_that("multiplication works", {
 
   hmi4 <- how_many_imputations(modelFit1, alpha = .00001)
   expect_true(hmi1 < hmi4)
+})
+
+
+test_that("jomo", {
+  library(jomo)
+  library(mitools) # for the `imputationList` function
+  capture.output(jomodata <- jomo1(airquality, nburn = 100, nbetween = 100, nimp = 5)) -> c
+  impdata2 <- imputationList(split(jomodata, jomodata$Imputation))
+  modelfit2 <- with(impdata2, lm(Temp ~ Ozone + Solar.R + Wind))
+  # Either can work:
+  hmi <- how_many_imputations(modelfit2)
+  expect_type(hmi, "double")
+  expect_true(hmi > 5)
+  expect_true(hmi < 500)
 })

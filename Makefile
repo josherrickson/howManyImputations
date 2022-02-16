@@ -26,6 +26,9 @@ check: FUNC=check
 .PHONY:document
 document: FUNC=document
 
+.PHONY:test
+test: FUNC=test
+
 .PHONY:build
 build: FUNC=build
 

@@ -50,8 +50,6 @@ imputation.
 > impdata2 <- imputationList(split(jomodata, jomodata$Imputation))
 > modelfit2 <- with(impdata2, lm(Temp ~ Ozone + Solar.R + Wind))
 > # Either can work:
-> how_many_imputations(as.mira(modelfit2))
-[1] 77
-> how_many_imputations(pool(modelfit2))
+> how_many_imputations(modelfit2)
 [1] 77
 ```

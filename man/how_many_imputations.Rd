@@ -7,11 +7,13 @@
 how_many_imputations(model, cv = 0.05, alpha = 0.05)
 }
 \arguments{
-\item{model}{Either a `mira` object (created by running a model on a data set which was imputed via "mice")
-or a `mipo` object (creating by runing `pool()` on a `mira` object).}
+\item{model}{Either a `mira` object (created by running a model on a data set
+which was imputed via "mice") or a `mipo` object (creating by runing
+`pool()` on a `mira` object), or any object which can be coverted to `mira` via `as.mira`}
 
-\item{cv}{Desired precision of standard errors. Default to .05. (I.e., if the data were re-imputed, the
-estimated standard errors would differ by no more than this amount.)}
+\item{cv}{Desired precision of standard errors. Default to .05. (I.e., if the
+data were re-imputed, the estimated standard errors would differ by no more
+than this amount.)}
 
 \item{alpha}{Significance level for choice of "conservative" FMI.}
 }
@@ -38,9 +40,7 @@ library(mitools) # for the `imputationList` function
 jomodata <- jomo::jomo1(airquality, nburn = 100, nbetween = 100, nimp = 5)
 impdata2 <- mitools::imputationList(split(jomodata, jomodata$Imputation))
 modelfit2 <- with(impdata2, lm(Temp ~ Ozone + Solar.R + Wind))
-# Either can work:
-how_many_imputations(mice::as.mira(modelfit2))
-how_many_imputations(mice::pool(modelfit2))
+how_many_imputations(modelfit2)
 }
 \references{
 von Hippel, Paul T. (2018)
