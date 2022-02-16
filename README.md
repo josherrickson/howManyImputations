@@ -37,8 +37,9 @@ Here's an example:
 ```
 
 If you're using a different package to carry out the imputation, and said
-package produces a `list` of models as the output of its modeling step, mice's
-`as.mira` function may be helpful. Here's the above example reworked using the
+package produces a `list` of models as the output of its modeling step,
+`howManyImputations` tries to convert the object to `mira` via `as.mira`. Here's
+the above example reworked using the
 [jomo](https://cran.r-project.org/web/packages/jomo/index.html) package for the
 imputation.
 
