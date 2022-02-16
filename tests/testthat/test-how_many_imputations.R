@@ -21,6 +21,9 @@ test_that("basic results", {
 
   hmi4 <- how_many_imputations(modelFit1, alpha = .00001)
   expect_true(hmi1 < hmi4)
+
+  expect_error(how_many_imputations(1),
+               "must be")
 })
 
 
