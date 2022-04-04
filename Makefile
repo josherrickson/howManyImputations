@@ -46,7 +46,3 @@ dependencies test check document vignette clean-vignette build check_win check_w
 .PHONY:clean
 clean:
 	git clean -Xfd
-
-.PHONY:spell-check-DESCRIPTION
-spell-check-DESCRIPTION:
-	aspell -c DESCRIPTION --personal=NULL
