@@ -1,0 +1,6 @@
+url: http://errickson.net/howManyImputations/
+template:
+  bootstrap: 5
+development:
+  mode: auto
+

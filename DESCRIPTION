@@ -1,7 +1,7 @@
 Package: howManyImputations
 Type: Package
 Title: Implements "how_many_imputations" from von Hippel (2018)
-Version: 0.1.0
+Version: 0.1.0.9001
 Description: von Hippel (2018) provided Stata and SAS code for calculating how many
   imputations are needed for replicable SE estimates. This package provides a similar
   function following imputation via the "mice" package.
@@ -20,3 +20,4 @@ Imports:
   methods,
   stats,
   mice
+URL: http://errickson.net/howManyImputations/
