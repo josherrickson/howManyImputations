@@ -34,7 +34,7 @@ von Hippel (2018) provides a way to calculate the number of imputations
 needed to have consistent estimates of the standard error. To do so requires
 an estimate of the Fraction of Missing Information (FMI) which can only be
 obtained after running some number of imputations. Therefore, von Hippel
-(2018) recommends a two-step procedure:
+(2018) recommends the following procedure:
 
 \enumerate{
   \item Carry out a limited number of imputations to enable estimation the

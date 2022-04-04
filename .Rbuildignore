@@ -11,3 +11,4 @@ load.R
 ^pkgdown$
 ^\.github$
 ^cran-comments\.md$
+README.md

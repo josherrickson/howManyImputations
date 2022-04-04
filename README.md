@@ -1,10 +1,10 @@
 # howManyImputations
 
-Package website: [release](https://errickson.net/howManyImputations) | [development](https://errickson.net/howManyImputations/dev)
+Package website: [release](https://errickson.net/howManyImputations/) | [development](https://errickson.net/howManyImputations/dev/)
 
 <!-- badges: start -->
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/howManyImputations)](https://cran.r-project.org/package=howManyImputations)
-[![R-build-check](https://github.com/josherrickson/howManyImputations/workflows/R-build-check/badge.svg)](https://github.com/josherrickson/howManyImputations/actions)
+[![R-build-check](https://github.com/josherrickson/howManyImputations/workflows/R-build-check/badge.svg)](https://github.com/josherrickson/howManyImputations/actions/)
 <!-- badges: end -->
 
 Implements "how_many_imputations" from von Hippel (2018). See
@@ -21,9 +21,8 @@ install_github("josherrickson/howManyImputations")
 If you prefer not to install the entire package, the only relevant file is
 R/howManyImputations.R; you can just copy that function into your code.
 
-howManyImputations relies on the
-[mice](https://cran.r-project.org/web/packages/mice/index.html) package to
-compute the FMI.
+howManyImputations relies on the [mice](https://cran.r-project.org/package=mice)
+package to compute the FMI.
 
 Here's an example:
 
@@ -46,8 +45,7 @@ If you're using a different package to carry out the imputation, and said
 package produces a `list` of models as the output of its modeling step,
 `howManyImputations` tries to convert the object to `mira` via `as.mira`. Here's
 the above example reworked using the
-[jomo](https://cran.r-project.org/web/packages/jomo/index.html) package for the
-imputation.
+[jomo](https://cran.r-project.org/package=jomo) package for the imputation.
 
 
 ```{r}
