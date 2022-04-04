@@ -5,7 +5,7 @@ Version: 0.1.0.9001
 Description: von Hippel (2018) provided Stata and SAS code for calculating how many
   imputations are needed for replicable SE estimates. This package provides a similar
   function following imputation via the "mice" package.
-Authors@R: person("Josh", "Errickson", email = "josh@errickson.net",
+Authors@R: person("Josh", "Errickson", email = "jerrick@umich.edu",
                   role = c("aut", "cre"))
 License: MIT + file LICENSE
 Encoding: UTF-8
