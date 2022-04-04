@@ -2,15 +2,16 @@
 #'
 #' Implements two-stage "how_many_imputations" from von Hippel (2018)
 #'
-#' @param model Either a `mira` object (created by running a model on a data set
-#'   which was imputed via "mice") or a `mipo` object (creating by runing
-#'   `pool()` on a `mira` object), or any object which can be coverted to `mira` via `as.mira`
-#' @param cv Desired precision of standard errors. Default to .05. (I.e., if the
-#'   data were re-imputed, the estimated standard errors would differ by no more
-#'   than this amount.)
+#' @param model Either a \code{mira} object (created by running a model on a
+#'   data set which was imputed using \code{mice}) or a \code{mipo} object
+#'   (creating by runing \code{pool()} on a \code{mira} object), or any object
+#'   which can be coverted to \code{mira} via \code{as.mira}.
+#' @param cv Desired precision of standard errors. Default to .05. If the data
+#'   were re-imputed, the estimated standard errors would differ by no more than
+#'   this amount.
 #' @param alpha Significance level for choice of "conservative" FMI.
-#'
-#' @return The number of required imputations to obtain the `cv` level of precision.
+#' @return The number of required imputations to obtain the \code{cv} level of
+#'   precision.
 #' @export
 #' @importFrom methods is
 #' @importFrom stats plogis qlogis qnorm
@@ -38,7 +39,6 @@
 #' impdata2 <- mitools::imputationList(split(jomodata, jomodata$Imputation))
 #' modelfit2 <- with(impdata2, lm(Temp ~ Ozone + Solar.R + Wind))
 #' how_many_imputations(modelfit2)
-
 how_many_imputations <- function(model,
                                  cv = .05,
                                  alpha = .05) {

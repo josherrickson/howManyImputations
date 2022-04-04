@@ -7,18 +7,20 @@
 how_many_imputations(model, cv = 0.05, alpha = 0.05)
 }
 \arguments{
-\item{model}{Either a `mira` object (created by running a model on a data set
-which was imputed via "mice") or a `mipo` object (creating by runing
-`pool()` on a `mira` object), or any object which can be coverted to `mira` via `as.mira`}
+\item{model}{Either a \code{mira} object (created by running a model on a
+data set which was imputed using \code{mice}) or a \code{mipo} object
+(creating by runing \code{pool()} on a \code{mira} object), or any object
+which can be coverted to \code{mira} via \code{as.mira}.}
 
-\item{cv}{Desired precision of standard errors. Default to .05. (I.e., if the
-data were re-imputed, the estimated standard errors would differ by no more
-than this amount.)}
+\item{cv}{Desired precision of standard errors. Default to .05. If the data
+were re-imputed, the estimated standard errors would differ by no more than
+this amount.}
 
 \item{alpha}{Significance level for choice of "conservative" FMI.}
 }
 \value{
-The number of required imputations to obtain the `cv` level of precision.
+The number of required imputations to obtain the \code{cv} level of
+  precision.
 }
 \description{
 Implements two-stage "how_many_imputations" from von Hippel (2018)
