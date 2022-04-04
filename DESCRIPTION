@@ -11,13 +11,15 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Suggests:
-  testthat (>= 2.1.0),
-  roxygen2,
-  jomo,
-  mitools
+    testthat (>= 2.1.0),
+    roxygen2,
+    jomo,
+    mitools
 RoxygenNote: 7.1.2
 Imports:
   methods,
   stats,
   mice
 URL: https://errickson.net/howManyImputations/
+BugReports: https://github.com/josherrickson/howManyImputations/issues/
+Language: en-US

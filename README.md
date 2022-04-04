@@ -1,5 +1,11 @@
 # howManyImputations
-[![R-build-check](https://github.com/josherrickson/howManyImputations/workflows/R-build-check/badge.svg)](https://github.com/josherrickson/howManyImputations/actions)
+
+Package website: [release](https://errickson.net/howManyImputations) | [development](https://errickson.net/howManyImputations/dev)
+
+<!-- badges: start -->
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/howManyImputations)](https://cran.r-project.org/package=howManyImputations)
+[![R-CMD-check](https://github.com/josherrickson/howManyImputations/workflows/R-CMD-check/badge.svg)](https://github.com/josherrickson/howManyImputations/actions)
+<!-- badges: end -->
 
 Implements "how_many_imputations" from von Hippel (2018). See
 https://missingdata.org/

@@ -9,8 +9,8 @@ how_many_imputations(model, cv = 0.05, alpha = 0.05)
 \arguments{
 \item{model}{Either a \code{mira} object (created by running a model on a
 data set which was imputed using \code{mice}) or a \code{mipo} object
-(creating by runing \code{pool()} on a \code{mira} object), or any object
-which can be coverted to \code{mira} via \code{as.mira}.}
+(creating by running \code{pool()} on a \code{mira} object), or any object
+which can be converted to \code{mira} via \code{as.mira}.}
 
 \item{cv}{Desired precision of standard errors. Default to .05. If the data
 were re-imputed, the estimated standard errors would differ by no more than
@@ -34,7 +34,7 @@ von Hippel (2018) provides a way to calculate the number of imputations
 needed to have consistent estimates of the standard error. To do so requires
 an estimate of the Fraction of Missing Information (FMI) which can only be
 obtained after running some number of imputations. Therefore, von Hippel
-(2018) recommends a two-step procedue:
+(2018) recommends a two-step procedure:
 
 \enumerate{
   \item Carry out a limited number of imputations to enable estimation the
