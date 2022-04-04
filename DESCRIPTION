@@ -1,7 +1,7 @@
 Package: howManyImputations
 Type: Package
 Title: Implements "how_many_imputations" from von Hippel (2018)
-Version: 0.2.0
+Version: 0.2.1
 Description: Calculates how many imputations are needed for replicable
   SE estimates. Based upon von Hippel (2018).
 Authors@R: person("Josh", "Errickson", email = "jerrick@umich.edu",
