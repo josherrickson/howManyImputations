@@ -5,3 +5,4 @@
 .github
 Makefile
 load.R
+^LICENSE\.md$
