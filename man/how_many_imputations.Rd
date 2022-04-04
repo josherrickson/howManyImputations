@@ -25,6 +25,26 @@ The number of required imputations to obtain the \code{cv} level of
 \description{
 Implements two-stage "how_many_imputations" from von Hippel (2018)
 }
+\details{
+The old advice of 5-10 imputations is sufficient for a point estimate (e.g.
+an estimated coefficient), but not for estimates of standard errors (and
+consequently, hypothesis tests or confidence intervals).
+
+von Hippel (2018) provides a way to calculate the number of imputations
+needed to have consistent estimates of the standard error. To do so requires
+an estimate of the Fraction of Missing Information (FMI) which can only be
+obtained after running some number of imputations. Therefore, von Hippel
+(2018) recommends a two-step procedue:
+
+\enumerate{
+  \item Carry out a limited number of imputations to enable estimation the
+  FMI. von Hippel (2018) recommends 20 imputations.
+  \item Use this function, \code{howManyImputations}, to calculate how many
+  total imputations you will need.
+  \item If the number of total imputations you will need is larger than your
+  initial batch of 20, run additional imputations.
+}
+}
 \examples{
 data(airquality)
 # Add some missingness
