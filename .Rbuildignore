@@ -10,3 +10,4 @@ load.R
 ^docs$
 ^pkgdown$
 ^\.github$
+^cran-comments\.md$
