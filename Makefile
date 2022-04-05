@@ -22,6 +22,7 @@ dependencies: DEVTOOLSARG=dependencies=TRUE
 
 .PHONY:check
 check: FUNC=check
+check: DEVTOOLSARG=incoming=TRUE
 
 .PHONY:document
 document: FUNC=document
