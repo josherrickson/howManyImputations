@@ -14,7 +14,6 @@ New submission
 
 Possibly misspelled words in DESCRIPTION:
 Hippel (10:48)
-howManyImputations (9:14)
 von (10:44)
 
 Found the following (possibly) invalid DOIs:
@@ -27,9 +26,9 @@ Message: 503
 ## Comments about NOTEs
 
 - "von Hippel" is a proper name of the author of a paper and is not misspelled.
-- "howManyImputation" is the name of the package and is properly spelled.
 - The DOI is valid as confirmed on https://www.doi.org.
 
 # Submission comment
 
-This is a re-submission of the package, following some corrections in the metadata suggested by CRAN.
+This is a second re-submission of the package, following some corrections in the
+metadata suggested by CRAN.
