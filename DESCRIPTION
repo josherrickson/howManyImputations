@@ -1,9 +1,13 @@
 Package: howManyImputations
 Type: Package
-Title: Implements "how_many_imputations" from von Hippel (2018)
+Title: Calculate How many Imputations are Needed For Multiple Imputation
 Version: 0.2.1
-Description: Calculates how many imputations are needed for replicable
-  SE estimates. Based upon von Hippel (2018).
+Description: When performing multiple imputations, while 5-10 imputations are
+             sufficient for obtaining point estimates, a larger number of
+             imputations are needed for proper standard error estimates.
+             howManyImputations allows you to calculate how many imputations are
+             needed, following the work of von Hippel 2018
+             <doi:10.1177/0049124117747303>.
 Authors@R: person("Josh", "Errickson", email = "jerrick@umich.edu",
                   role = c("aut", "cre"))
 License: MIT + file LICENSE

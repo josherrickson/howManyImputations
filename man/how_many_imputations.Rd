@@ -37,7 +37,7 @@ obtained after running some number of imputations. Therefore, von Hippel
 (2018) recommends the following procedure:
 
 \enumerate{
-  \item Carry out a limited number of imputations to enable estimation the
+  \item Carry out a limited number of imputations to enable estimation of the
   FMI. von Hippel (2018) recommends 20 imputations.
   \item Use this function, \code{howManyImputations}, to calculate how many
   total imputations you will need.
@@ -65,7 +65,5 @@ modelfit2 <- with(impdata2, lm(Temp ~ Ozone + Solar.R + Wind))
 how_many_imputations(modelfit2)
 }
 \references{
-von Hippel, Paul T. (2018)
-\sQuote{How Many Imputations Do You Need? A Two-stage Calculation Using a Quadratic Rule.},
-\emph{Sociological Methods & Research} p.0049124117747303.
+Von Hippel, Paul T. "How many imputations do you need? A two-stage calculation using a quadratic rule." Sociological Methods & Research 49.3 (2020): 699-718.
 }
