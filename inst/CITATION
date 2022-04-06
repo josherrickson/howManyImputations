@@ -14,7 +14,7 @@ citEntry(entry = "Article",
   textVersion  =
     paste('Von Hippel, Paul T (2018). "How many imputations do you need?',
           'A two-stage calculation using a quadratic rule." Sociological',
-          'Methods & Research 49.3 (2020): 699-718.')
+          'Methods & Research. 2020;49(3):699-718. doi:10.1177/0049124117747303')
   )
 
 citFooter("For additional information, please see https://missingdata.org/.")
