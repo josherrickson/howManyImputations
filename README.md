@@ -84,5 +84,7 @@ output of `jomo::jomo1()` into a list via `mitools::imputationList()`).
 
 ## Reference
 
-Von Hippel, Paul T. "How many imputations do you need? A two-stage calculation
-using a quadratic rule." Sociological Methods & Research 49.3 (2020): 699-718.
+Von Hippel, Paul T (2018). "How many imputations do you need? A two-stage
+calculation using a quadratic rule." Sociological 'Methods & Research.
+2020;49(3):699-718.
+[doi:10.1177/0049124117747303](https://doi.org/10.1177/0049124117747303)
