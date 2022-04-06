@@ -1,4 +1,4 @@
-# howManyImputations
+# **howManyImputations** <a href="http://errickson.net/howManyImputations/"><img src="man/figures/logo.png" align="right" height="139" /></a>
 
 Package website: [release](https://errickson.net/howManyImputations/) | [development](https://errickson.net/howManyImputations/dev/)
 
@@ -18,13 +18,8 @@ library(devtools)
 install_github("josherrickson/howManyImputations")
 ```
 
-If you prefer not to install the entire package, the only relevant file is
-R/howManyImputations.R; you can just copy that function into your code.
-
-howManyImputations relies on the [mice](https://cran.r-project.org/package=mice)
-package to compute the FMI.
-
-Here's an example:
+The only function in **howManyImputations** is `how_many_imputations`. Here's an
+example:
 
 ```{r}
 > library(howManyImputations)
@@ -43,9 +38,10 @@ Here's an example:
 
 If you're using a different package to carry out the imputation, and said
 package produces a `list` of models as the output of its modeling step,
-`howManyImputations` tries to convert the object to `mira` via `as.mira`. Here's
+`how_many_imputations` tries to convert the object to a `mira` via `as.mira`
+(from the [**mice**](https://cran.r-project.org/package=mice) package. Here's
 the above example reworked using the
-[jomo](https://cran.r-project.org/package=jomo) package for the imputation.
+[**jomo**](https://cran.r-project.org/package=jomo) package for the imputation.
 
 
 ```{r}

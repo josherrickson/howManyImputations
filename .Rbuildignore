@@ -12,3 +12,5 @@ load.R
 ^\.github$
 ^cran-comments\.md$
 README.md
+hexsticker
+man/figures
