@@ -30,9 +30,21 @@ recommended:
 
 ## Usage
 
-The only function in **howManyImputations** is
-[`how_many_imputations`](reference/how_many_imputations.html). Here's an
-example:
+The only function in **howManyImputations** is `how_many_imputations`. This
+takes in the results of a model fit on multiply imputed data (primarily from
+**mice** but see below for working with other MI packages) and estimates how
+many total imputations are needed.
+
+```
+mi_model_fit <- with(imputed_data, lm(y ~ x))
+how_many_imputations(mi_model_fit)
+```
+
+The `cv` and `alpha` arguments can be used to tweaked to control how
+conservative or anti-conversative the estimate is. See documentation for further
+details.
+
+Here's a worked example:
 
 ```
 > library(howManyImputations)
