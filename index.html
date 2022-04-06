@@ -93,7 +93,7 @@
 <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://devtools.r-lib.org/" class="external-link">devtools</a></span><span class="op">)</span>
 <span class="fu">install_github</span><span class="op">(</span><span class="st">"josherrickson/howManyImputations"</span><span class="op">)</span></code></pre>
 <p>The only function in <strong>howManyImputations</strong> is <code>how_many_imputations</code>. Here’s an example:</p>
-<pre class="{r}"><code>&gt; library(howManyImputations)
+<pre><code>&gt; library(howManyImputations)
 &gt; data(airquality)
 &gt; # Add some missingness
 &gt; airquality[4:10, 3] &lt;- rep(NA, 7)
@@ -106,7 +106,7 @@
 &gt; how_many_imputations(modelFit1, cv = .01)
 [1] 1767</code></pre>
 <p>If you’re using a different package to carry out the imputation, and said package produces a <code>list</code> of models as the output of its modeling step, <code>how_many_imputations</code> tries to convert the object to a <code>mira</code> via <code>as.mira</code> (from the <a href="https://cran.r-project.org/package=mice" class="external-link"><strong>mice</strong></a> package. Here’s the above example reworked using the <a href="https://cran.r-project.org/package=jomo" class="external-link"><strong>jomo</strong></a> package for the imputation.</p>
-<pre class="{r}"><code>&gt; library(jomo)
+<pre><code>&gt; library(jomo)
 &gt; library(mitools) # for the `imputationList` function
 &gt; jomodata &lt;- jomo1(airquality, nburn = 100, nbetween = 100, nimp = 5)
 &gt; impdata2 &lt;- imputationList(split(jomodata, jomodata$Imputation))
