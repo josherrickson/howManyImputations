@@ -7,20 +7,20 @@ Package website: [release](https://errickson.net/howManyImputations/) | [develop
 [![R-build-check](https://github.com/josherrickson/howManyImputations/workflows/R-build-check/badge.svg)](https://github.com/josherrickson/howManyImputations/actions/)
 <!-- badges: end -->
 
-**howManyImputations** implements "how_many_imputations" from von Hippel (2018).
+**howManyImputations** implements "how_many_imputations" from von Hippel (2020).
 See [https://missingdata.org/](https://missingdata.org/). When carrying out
 multiple imputation, the old advice of 5-10 imputations is sufficient for a
 point estimate (e.g. an estimated coefficient), but not for estimates of
 standard errors (and consequently, hypothesis tests or confidence intervals).
 
-von Hippel (2018) provides a way to calculate the number of imputations needed
+von Hippel (2020) provides a way to calculate the number of imputations needed
 to have consistent estimates of the standard error. To do so requires an
 estimate of the Fraction of Missing Information (FMI) which can only be obtained
 after running some number of imputations. Therefore, the following procedure is
 recommended:
 
 1. Carry out a limited number of imputations to enable estimation of the FMI.
-  von Hippel (2018) recommends 20 imputations.
+  von Hippel (2020) recommends 20 imputations.
 2. Use the function `how_many_imputations()` to calculate how many total
   imputations you will need.
 3. If the number of total imputations you will need is larger than your initial
@@ -84,7 +84,6 @@ output of `jomo::jomo1()` into a list via `mitools::imputationList()`).
 
 ## Reference
 
-Von Hippel, Paul T (2018). "How many imputations do you need? A two-stage
-calculation using a quadratic rule." Sociological Methods & Research.
-2020;49(3):699-718.
+Von Hippel, Paul T. "How many imputations do you need? A two-stage calculation
+using a quadratic rule." Sociological Methods & Research. 2020;49(3):699-718.
 [doi:10.1177/0049124117747303](https://doi.org/10.1177/0049124117747303)

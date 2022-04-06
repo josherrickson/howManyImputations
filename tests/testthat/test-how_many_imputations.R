@@ -39,3 +39,18 @@ test_that("jomo", {
   expect_true(hmi > 5)
   expect_true(hmi < 500)
 })
+
+
+test_that("howManyImputations and how_many_imputations", {
+  library(mice)
+  data <- airquality
+  data[4:10,3] <- rep(NA,7)
+  data[1:5,4] <- NA
+  data <- data[-c(5,6)]
+  capture.output(tempData <- mice(data,m=5,maxit=10,meth='pmm')) -> c
+  modelFit1 <- with(tempData,lm(Temp~ Ozone+Solar.R+Wind))
+
+  hmi1 <- how_many_imputations(modelFit1)
+  expect_warning(hmi2 <- howManyImputations(modelFit1), "name")
+  expect_identical(hmi1, hmi2)
+})
