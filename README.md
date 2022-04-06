@@ -7,18 +7,31 @@ Package website: [release](https://errickson.net/howManyImputations/) | [develop
 [![R-build-check](https://github.com/josherrickson/howManyImputations/workflows/R-build-check/badge.svg)](https://github.com/josherrickson/howManyImputations/actions/)
 <!-- badges: end -->
 
-Implements "how_many_imputations" from von Hippel (2018). See
-https://missingdata.org/
+**howManyImputations** implements "how_many_imputations" from von Hippel (2018).
+See [https://missingdata.org/](https://missingdata.org/). When carrying out
+multiple imputation, the old advice of 5-10 imputations is sufficient for a
+point estimate (e.g. an estimated coefficient), but not for estimates of
+standard errors (and consequently, hypothesis tests or confidence intervals).
 
-This can be installed via the `devtools` package:
+von Hippel (2018) provides a way to calculate the number of imputations needed
+to have consistent estimates of the standard error. To do so requires an
+estimate of the Fraction of Missing Information (FMI) which can only be obtained
+after running some number of imputations. Therefore, the following procedure is
+recommended:
 
-```
-install.packages("devtools")
-library(devtools)
-install_github("josherrickson/howManyImputations")
-```
+\enumerate{
+  \item Carry out a limited number of imputations to enable estimation of the
+  FMI. von Hippel (2018) recommends 20 imputations.
+  \item Use this function, \code{how_many_imputations}, to calculate how many
+  total imputations you will need.
+  \item If the number of total imputations you will need is larger than your
+  initial batch of 20, run additional imputations.
+}
 
-The only function in **howManyImputations** is `how_many_imputations`. Here's an
+## Usage
+
+The only function in **howManyImputations** is
+[`how_many_imputations`](reference/how_many_imputations.html). Here's an
 example:
 
 ```
@@ -53,3 +66,8 @@ the above example reworked using the
 > how_many_imputations(modelfit2)
 [1] 77
 ```
+
+## Reference
+
+Von Hippel, Paul T. "How many imputations do you need? A two-stage calculation
+using a quadratic rule." Sociological Methods & Research 49.3 (2020): 699-718.
