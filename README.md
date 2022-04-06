@@ -21,7 +21,7 @@ install_github("josherrickson/howManyImputations")
 The only function in **howManyImputations** is `how_many_imputations`. Here's an
 example:
 
-```{r}
+```
 > library(howManyImputations)
 > data(airquality)
 > # Add some missingness
@@ -44,7 +44,7 @@ the above example reworked using the
 [**jomo**](https://cran.r-project.org/package=jomo) package for the imputation.
 
 
-```{r}
+```
 > library(jomo)
 > library(mitools) # for the `imputationList` function
 > jomodata <- jomo1(airquality, nburn = 100, nbetween = 100, nimp = 5)
