@@ -2,20 +2,20 @@
 % Please edit documentation in R/how_many_imputations.R
 \name{howManyImputations}
 \alias{howManyImputations}
-\title{Improper function name, use \code{how_many_imputations} instead}
+\title{Improper function name, use \code{how_many_imputations()} instead}
 \usage{
 howManyImputations(model, cv = 0.05, alpha = 0.05)
 }
 \arguments{
-\item{model}{See \code{how_many_imputations}}
+\item{model}{See \code{how_many_imputations()}}
 
-\item{cv}{See \code{how_many_imputations}}
+\item{cv}{See \code{how_many_imputations()}}
 
-\item{alpha}{See \code{how_many_imputations}}
+\item{alpha}{See \code{how_many_imputations()}}
 }
 \value{
-See \code{how_many_imputations}
+See \code{how_many_imputations()}
 }
 \description{
-Improper function name, use \code{how_many_imputations} instead
+Improper function name, use \code{how_many_imputations()} instead
 }

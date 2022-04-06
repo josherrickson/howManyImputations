@@ -2,7 +2,7 @@
 % Please edit documentation in R/how_many_imputations.R
 \name{how_many_imputations}
 \alias{how_many_imputations}
-\title{How Many Imputations?}
+\title{Implements two-stage "how_many_imputations" from von Hippel (2020)}
 \usage{
 how_many_imputations(model, cv = 0.05, alpha = 0.05)
 }
@@ -23,13 +23,11 @@ The number of required imputations to obtain the \code{cv} level of
   precision.
 }
 \description{
-Implements two-stage "how_many_imputations" from von Hippel (2020)
-}
-\details{
 The old advice of 5-10 imputations is sufficient for a point estimate (e.g.
 an estimated coefficient), but not for estimates of standard errors (and
 consequently, hypothesis tests or confidence intervals).
-
+}
+\details{
 von Hippel (2020) provides a way to calculate the number of imputations
 needed to have consistent estimates of the standard error. To do so requires
 an estimate of the Fraction of Missing Information (FMI) which can only be

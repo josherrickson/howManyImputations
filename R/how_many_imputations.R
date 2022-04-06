@@ -1,5 +1,3 @@
-#' How Many Imputations?
-#'
 #' Implements two-stage "how_many_imputations" from von Hippel (2020)
 #'
 #' The old advice of 5-10 imputations is sufficient for a point estimate (e.g.
@@ -76,12 +74,12 @@ how_many_imputations <- function(model,
   ceiling(1 + 1/2*(fmiu/cv)^2)
 }
 
-#' Improper function name, use \code{how_many_imputations} instead
+#' Improper function name, use \code{how_many_imputations()} instead
 #'
-#' @param model See \code{how_many_imputations}
-#' @param cv See \code{how_many_imputations}
-#' @param alpha See \code{how_many_imputations}
-#' @return See \code{how_many_imputations}
+#' @param model See \code{how_many_imputations()}
+#' @param cv See \code{how_many_imputations()}
+#' @param alpha See \code{how_many_imputations()}
+#' @return See \code{how_many_imputations()}
 #' @export
 howManyImputations <- function(model,
                                cv = .05,
