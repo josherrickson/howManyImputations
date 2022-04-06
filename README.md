@@ -31,8 +31,8 @@ recommended:
 
 The only function in **howManyImputations** is `how_many_imputations()`. This
 takes in the results of a model fit on multiply imputed data (primarily from
-**mice** but see below for working with other MI packages) and estimates how
-many total imputations are needed.
+[**mice**](https://cran.r-project.org/package=mice) but see below for working
+with other MI packages) and estimates how many total imputations are needed.
 
 ```
 library(mice)
@@ -65,10 +65,11 @@ Here's a worked example:
 
 If you're using a different package to carry out the imputation, and said
 package produces a `list` of models as the output of its modeling step,
-`how_many_imputations` tries to convert the object to a `mira` via `as.mira`
-(from the [**mice**](https://cran.r-project.org/package=mice) package. Here's
-the above example reworked using the
-[**jomo**](https://cran.r-project.org/package=jomo) package for the imputation.
+`how_many_imputations()` tries to convert the object to a `mira` object via
+`mice::as.mira()` . Here's the above example reworked using the
+[**jomo**](https://cran.r-project.org/package=jomo) package for the imputation
+(using [**mitools**](https://cran.r-project.org/package=mitools) to convert the
+output of `jomo::jomo1()` into a list via `mitools::imputationList()`).
 
 
 ```
