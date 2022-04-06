@@ -19,14 +19,12 @@ estimate of the Fraction of Missing Information (FMI) which can only be obtained
 after running some number of imputations. Therefore, the following procedure is
 recommended:
 
-\enumerate{
-  \item Carry out a limited number of imputations to enable estimation of the
-  FMI. von Hippel (2018) recommends 20 imputations.
-  \item Use this function, \code{how_many_imputations}, to calculate how many
-  total imputations you will need.
-  \item If the number of total imputations you will need is larger than your
-  initial batch of 20, run additional imputations.
-}
+1. Carry out a limited number of imputations to enable estimation of the FMI.
+  von Hippel (2018) recommends 20 imputations.
+2. Use this function, \code{how_many_imputations}, to calculate how many total
+  imputations you will need.
+3. If the number of total imputations you will need is larger than your initial
+  batch of 20, run additional imputations.
 
 ## Usage
 
