@@ -35,6 +35,8 @@ takes in the results of a model fit on multiply imputed data (primarily from
 many total imputations are needed.
 
 ```
+library(mice)
+imputed_data <- mice(data_with_missing, ...)
 mi_model_fit <- with(imputed_data, lm(y ~ x))
 how_many_imputations(mi_model_fit)
 how_many_imputations(mi_model_fit, cv = .1, alpha = .01)
