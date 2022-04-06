@@ -93,10 +93,11 @@
 <div class="section level2">
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
-<p>The only function in <strong>howManyImputations</strong> is <code>how_many_imputations</code>. This takes in the results of a model fit on multiply imputed data (primarily from <strong>mice</strong> but see below for working with other MI packages) and estimates how many total imputations are needed.</p>
+<p>The only function in <strong>howManyImputations</strong> is <code><a href="reference/how_many_imputations.html">how_many_imputations()</a></code>. This takes in the results of a model fit on multiply imputed data (primarily from <strong>mice</strong> but see below for working with other MI packages) and estimates how many total imputations are needed.</p>
 <pre><code><span class="va">mi_model_fit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/with.html" class="external-link">with</a></span><span class="op">(</span><span class="va">imputed_data</span>, <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">y</span> <span class="op">~</span> <span class="va">x</span><span class="op">)</span><span class="op">)</span>
-<span class="fu"><a href="reference/how_many_imputations.html">how_many_imputations</a></span><span class="op">(</span><span class="va">mi_model_fit</span><span class="op">)</span></code></pre>
-<p>The <code>cv</code> and <code>alpha</code> arguments can be used to tweaked to control how conservative or anti-conversative the estimate is. See documentation for further details.</p>
+<span class="fu"><a href="reference/how_many_imputations.html">how_many_imputations</a></span><span class="op">(</span><span class="va">mi_model_fit</span><span class="op">)</span>
+<span class="fu"><a href="reference/how_many_imputations.html">how_many_imputations</a></span><span class="op">(</span><span class="va">mi_model_fit</span>, cv <span class="op">=</span> <span class="fl">.1</span>, alpha <span class="op">=</span> <span class="fl">.01</span><span class="op">)</span></code></pre>
+<p>The optional <code>cv</code> and <code>alpha</code> arguments can be used to tweaked to control how conservative or anti-conversative the estimate is. See documentation for further details.</p>
 <p>Here’s a worked example:</p>
 <pre><code>&gt; library(howManyImputations)
 &gt; data(airquality)
