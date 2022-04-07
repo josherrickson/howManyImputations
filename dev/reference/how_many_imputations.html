@@ -64,9 +64,9 @@ consequently, hypothesis tests or confidence intervals).</p>
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>model</dt>
 <dd><p>Either a <code>mira</code> object (created by running a model on a
-data set which was imputed using <code>mice</code>) or a <code>mipo</code> object
+data set which was imputed using <code><a href="https://amices.org/mice/reference/mice.html" class="external-link">mice::mice()</a></code>) or a <code>mipo</code> object
 (creating by running <code><a href="https://amices.org/mice/reference/pool.html" class="external-link">pool()</a></code> on a <code>mira</code> object), or any object
-which can be converted to <code>mira</code> via <code>as.mira</code>.</p></dd>
+which can be converted to <code>mira</code> via <code><a href="https://amices.org/mice/reference/as.mira.html" class="external-link">as.mira()</a></code>.</p></dd>
 <dt>cv</dt>
 <dd><p>Desired precision of standard errors. Default to .05. If the data
 were re-imputed, the estimated standard errors would differ by no more than
@@ -88,7 +88,7 @@ obtained after running some number of imputations. Therefore, von Hippel
 (2020) recommends the following procedure:</p>
 <ol><li><p>Carry out a limited number of imputations to enable estimation of the
   FMI. von Hippel (2020) recommends 20 imputations.</p></li>
-<li><p>Use this function, <code>how_many_imputations</code>, to calculate how many
+<li><p>Use this function, <code>how_many_imputations()</code>, to calculate how many
   total imputations you will need.</p></li>
 <li><p>If the number of total imputations you will need is larger than your
   initial batch of 20, run additional imputations.</p></li>
@@ -176,21 +176,21 @@ obtained after running some number of imputations. Therefore, von Hippel
 <span class="r-out co"><span class="r-pr">#&gt;</span> ..........Imputation number  5 registered </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> The posterior mean of the fixed effects estimates is:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                 X1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Ozone    41.830664</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Solar.R 184.775472</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Wind      9.877328</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Temp     78.246816</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Ozone    41.733766</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Solar.R 184.761947</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Wind      9.887616</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Temp     78.183991</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> The posterior covariance matrix is:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              Ozone      Solar.R        Wind      Temp</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Ozone   1090.15965  959.0116260 -66.9206058 209.35933</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Solar.R  959.01163 8429.9366448  -0.1702519 258.11203</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Wind     -66.92061   -0.1702519  12.3209198 -14.42778</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Temp     209.35933  258.1120318 -14.4277783  88.63095</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              Ozone     Solar.R       Wind      Temp</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Ozone   1084.42294  982.298940 -65.882435 211.12403</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Solar.R  982.29894 8591.973826  -1.197553 262.08105</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Wind     -65.88244   -1.197553  12.317417 -14.35656</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Temp     211.12403  262.081045 -14.356558  89.84555</span>
 <span class="r-in"><span class="va">impdata2</span> <span class="op">&lt;-</span> <span class="fu">mitools</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/mitools/man/imputationList.html" class="external-link">imputationList</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/split.html" class="external-link">split</a></span><span class="op">(</span><span class="va">jomodata</span>, <span class="va">jomodata</span><span class="op">$</span><span class="va">Imputation</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-in"><span class="va">modelfit2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/with.html" class="external-link">with</a></span><span class="op">(</span><span class="va">impdata2</span>, <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">Temp</span> <span class="op">~</span> <span class="va">Ozone</span> <span class="op">+</span> <span class="va">Solar.R</span> <span class="op">+</span> <span class="va">Wind</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-in"><span class="fu">how_many_imputations</span><span class="op">(</span><span class="va">modelfit2</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 54</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 36</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
