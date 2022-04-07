@@ -13,16 +13,16 @@
 #' \enumerate{
 #'   \item Carry out a limited number of imputations to enable estimation of the
 #'   FMI. von Hippel (2020) recommends 20 imputations.
-#'   \item Use this function, \code{how_many_imputations}, to calculate how many
+#'   \item Use this function, \code{how_many_imputations()}, to calculate how many
 #'   total imputations you will need.
 #'   \item If the number of total imputations you will need is larger than your
 #'   initial batch of 20, run additional imputations.
 #' }
 #'
 #' @param model Either a \code{mira} object (created by running a model on a
-#'   data set which was imputed using \code{mice}) or a \code{mipo} object
+#'   data set which was imputed using \code{mice::mice()}) or a \code{mipo} object
 #'   (creating by running \code{pool()} on a \code{mira} object), or any object
-#'   which can be converted to \code{mira} via \code{as.mira}.
+#'   which can be converted to \code{mira} via \code{as.mira()}.
 #' @param cv Desired precision of standard errors. Default to .05. If the data
 #'   were re-imputed, the estimated standard errors would differ by no more than
 #'   this amount.
