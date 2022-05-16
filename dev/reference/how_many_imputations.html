@@ -176,21 +176,21 @@ obtained after running some number of imputations. Therefore, von Hippel
 <span class="r-out co"><span class="r-pr">#&gt;</span> ..........Imputation number  5 registered </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> The posterior mean of the fixed effects estimates is:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                 X1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Ozone    41.733766</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Solar.R 184.761947</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Wind      9.887616</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Temp     78.183991</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Ozone    41.925786</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Solar.R 184.639867</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Wind      9.862477</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Temp     78.241368</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> The posterior covariance matrix is:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              Ozone     Solar.R       Wind      Temp</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Ozone   1084.42294  982.298940 -65.882435 211.12403</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Solar.R  982.29894 8591.973826  -1.197553 262.08105</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Wind     -65.88244   -1.197553  12.317417 -14.35656</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Temp     211.12403  262.081045 -14.356558  89.84555</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              Ozone      Solar.R        Wind      Temp</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Ozone   1086.70325  980.6814088 -65.7797261 212.47145</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Solar.R  980.68141 8498.4752813  -0.1675969 251.64778</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Wind     -65.77973   -0.1675969  12.3206276 -14.30358</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Temp     212.47145  251.6477838 -14.3035833  89.21988</span>
 <span class="r-in"><span class="va">impdata2</span> <span class="op">&lt;-</span> <span class="fu">mitools</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/mitools/man/imputationList.html" class="external-link">imputationList</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/split.html" class="external-link">split</a></span><span class="op">(</span><span class="va">jomodata</span>, <span class="va">jomodata</span><span class="op">$</span><span class="va">Imputation</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-in"><span class="va">modelfit2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/with.html" class="external-link">with</a></span><span class="op">(</span><span class="va">impdata2</span>, <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">Temp</span> <span class="op">~</span> <span class="va">Ozone</span> <span class="op">+</span> <span class="va">Solar.R</span> <span class="op">+</span> <span class="va">Wind</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-in"><span class="fu">how_many_imputations</span><span class="op">(</span><span class="va">modelfit2</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 36</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 64</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
@@ -202,7 +202,7 @@ obtained after running some number of imputations. Therefore, von Hippel
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
     </footer></div>

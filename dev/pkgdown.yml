@@ -1,8 +1,8 @@
 pandoc: 2.7.3
-pkgdown: 2.0.2
+pkgdown: 2.0.3
 pkgdown_sha: ~
 articles: {}
-last_built: 2022-04-07T14:05Z
+last_built: 2022-05-16T14:20Z
 urls:
   reference: http://errickson.net/howManyImputations/reference
   article: http://errickson.net/howManyImputations/articles
