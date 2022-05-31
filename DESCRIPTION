@@ -1,7 +1,7 @@
 Package: howManyImputations
 Type: Package
 Title: Calculate How many Imputations are Needed for Multiple Imputation
-Version: 0.2.2.9001
+Version: 0.2.3
 Description: When performing multiple imputations, while 5-10 imputations are
              sufficient for obtaining point estimates, a larger number of
              imputations are needed for proper standard error estimates.
@@ -12,13 +12,12 @@ Authors@R: person("Josh", "Errickson", email = "jerrick@umich.edu",
                   role = c("aut", "cre"))
 License: MIT + file LICENSE
 Encoding: UTF-8
-LazyData: true
 Suggests:
     testthat (>= 2.1.0),
     roxygen2,
     jomo,
     mitools
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.0
 Imports:
   methods,
   stats,

@@ -63,5 +63,5 @@ modelfit2 <- with(impdata2, lm(Temp ~ Ozone + Solar.R + Wind))
 how_many_imputations(modelfit2)
 }
 \references{
-Von Hippel, Paul T. "How many imputations do you need? A two-stage calculation using a quadratic rule." Sociological Methods & Research 49.3 (2020): 699-718.
+von Hippel, Paul T. "How Many Imputations Do You Need? A Two-stage Calculation Using a Quadratic Rule." Sociological Methods & Research 49.3 (2020): 699-718.
 }

@@ -3,8 +3,8 @@ citHeader(paste("As howManyImputations is a minimal package which",
                 "please cite that paper instead."))
 
 citEntry(entry = "Article",
-  title        = "How many imputations do you need? A two-stage calculation using a quadratic rule.",
-  author       = personList(as.person("Paul T Von Hippel")),
+  title        = "How Many Imputations Do You Need? A Two-stage Calculation Using a Quadratic Rule.",
+  author       = personList(as.person("Paul T von Hippel")),
   journal      = "Sociological Methods & Research",
   year         = "2020",
   volume       = "49",
@@ -12,8 +12,8 @@ citEntry(entry = "Article",
   pages        = "699--718",
   url          = "https://journals.sagepub.com/doi/full/10.1177/0049124117747303",
   textVersion  =
-    paste('Von Hippel, Paul T. "How many imputations do you need?',
-          'A two-stage calculation using a quadratic rule." Sociological',
+    paste('von Hippel, Paul T. "How Many Imputations Do You Need?',
+          'A Two-stage Calculation Using a Quadratic Rule." Sociological',
           'Methods & Research. 2020;49(3):699-718. doi:10.1177/0049124117747303')
   )
 

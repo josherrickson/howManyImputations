@@ -34,7 +34,7 @@
 #' @importFrom stats plogis qlogis qnorm
 #' @importFrom mice mice as.mira pool
 #'
-#' @references Von Hippel, Paul T. "How many imputations do you need? A two-stage calculation using a quadratic rule." Sociological Methods & Research 49.3 (2020): 699-718.
+#' @references von Hippel, Paul T. "How Many Imputations Do You Need? A Two-stage Calculation Using a Quadratic Rule." Sociological Methods & Research 49.3 (2020): 699-718.
 #'
 #' @examples
 #' data(airquality)
