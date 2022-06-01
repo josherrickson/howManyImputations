@@ -176,21 +176,21 @@ obtained after running some number of imputations. Therefore, von Hippel
 <span class="r-out co"><span class="r-pr">#&gt;</span> ..........Imputation number  5 registered </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> The posterior mean of the fixed effects estimates is:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                 X1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Ozone    41.689602</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Solar.R 184.869832</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Wind      9.886017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Temp     78.175455</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Ozone    42.110999</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Solar.R 184.500467</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Wind      9.878771</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Temp     78.225464</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> The posterior covariance matrix is:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              Ozone     Solar.R       Wind      Temp</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Ozone   1096.61265  987.232223 -65.618121 213.26851</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Solar.R  987.23222 8580.531278  -3.280208 257.52692</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Wind     -65.61812   -3.280208  12.219307 -14.56623</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Temp     213.26851  257.526920 -14.566228  89.00814</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              Ozone      Solar.R        Wind      Temp</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Ozone   1088.34686  960.5057412 -65.4974569 213.32661</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Solar.R  960.50574 8419.9007370   0.6839923 250.75355</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Wind     -65.49746    0.6839923  12.4004880 -14.40916</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Temp     213.32661  250.7535541 -14.4091634  89.33910</span>
 <span class="r-in"><span class="va">impdata2</span> <span class="op">&lt;-</span> <span class="fu">mitools</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/mitools/man/imputationList.html" class="external-link">imputationList</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/split.html" class="external-link">split</a></span><span class="op">(</span><span class="va">jomodata</span>, <span class="va">jomodata</span><span class="op">$</span><span class="va">Imputation</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-in"><span class="va">modelfit2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/with.html" class="external-link">with</a></span><span class="op">(</span><span class="va">impdata2</span>, <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">Temp</span> <span class="op">~</span> <span class="va">Ozone</span> <span class="op">+</span> <span class="va">Solar.R</span> <span class="op">+</span> <span class="va">Wind</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-in"><span class="fu">how_many_imputations</span><span class="op">(</span><span class="va">modelfit2</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 56</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 39</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
