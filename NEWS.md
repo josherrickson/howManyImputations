@@ -1,4 +1,6 @@
-# howManyImputations 0.2.2.9001
+# howManyImputations 0.2.3.9001
+
+# howManyImputations 0.2.3
 
 - Because this package is just a thin wrapper around von Hippel (2020)'s work,
   added citation to that paper rather than this package.
