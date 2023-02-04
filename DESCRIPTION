@@ -1,7 +1,7 @@
 Package: howManyImputations
 Type: Package
 Title: Calculate How many Imputations are Needed for Multiple Imputation
-Version: 0.2.3.9001
+Version: 0.2.4
 Description: When performing multiple imputations, while 5-10 imputations are
              sufficient for obtaining point estimates, a larger number of
              imputations are needed for proper standard error estimates.

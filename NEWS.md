@@ -1,4 +1,6 @@
-# howManyImputations 0.2.3.9001
+# howManyImputations 0.2.4
+
+- Updated CITATION to use `bibentry()`.
 
 # howManyImputations 0.2.3
 
