@@ -14,3 +14,4 @@ load.R
 README.md
 hexsticker
 man/figures
+^CRAN-SUBMISSION$
