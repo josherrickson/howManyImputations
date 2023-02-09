@@ -1,11 +1,11 @@
 test_that("basic results", {
   library(mice)
   data <- airquality
-  data[4:10,3] <- rep(NA,7)
-  data[1:5,4] <- NA
-  data <- data[-c(5,6)]
-  capture.output(tempData <- mice(data,m=5,maxit=10,meth='pmm')) -> c
-  modelFit1 <- with(tempData,lm(Temp~ Ozone+Solar.R+Wind))
+  data[4:10, 3] <- rep(NA, 7)
+  data[1:5, 4] <- NA
+  data <- data[-c(5, 6)]
+  c <- capture.output(tempData <- mice(data, m = 5, maxit = 10, meth = "pmm"))
+  modelFit1 <- with(tempData, lm(Temp ~ Ozone + Solar.R + Wind))
 
   hmi1 <- how_many_imputations(modelFit1)
   expect_type(hmi1, "double")
@@ -30,7 +30,8 @@ test_that("basic results", {
 test_that("jomo", {
   library(jomo)
   library(mitools) # for the `imputationList` function
-  capture.output(jomodata <- jomo1(airquality, nburn = 100, nbetween = 100, nimp = 5)) -> c
+  c <- capture.output(jomodata <- jomo1(airquality, nburn = 100,
+                                        nbetween = 100, nimp = 5))
   impdata2 <- imputationList(split(jomodata, jomodata$Imputation))
   modelfit2 <- with(impdata2, lm(Temp ~ Ozone + Solar.R + Wind))
   # Either can work:
@@ -44,11 +45,11 @@ test_that("jomo", {
 test_that("howManyImputations and how_many_imputations", {
   library(mice)
   data <- airquality
-  data[4:10,3] <- rep(NA,7)
-  data[1:5,4] <- NA
-  data <- data[-c(5,6)]
-  capture.output(tempData <- mice(data,m=5,maxit=10,meth='pmm')) -> c
-  modelFit1 <- with(tempData,lm(Temp~ Ozone+Solar.R+Wind))
+  data[4:10, 3] <- rep(NA, 7)
+  data[1:5, 4] <- NA
+  data <- data[-c(5, 6)]
+  c <- capture.output(tempData <- mice(data, m = 5, maxit = 10, meth = "pmm"))
+  modelFit1 <- with(tempData, lm(Temp ~ Ozone + Solar.R + Wind))
 
   hmi1 <- how_many_imputations(modelFit1)
   expect_warning(hmi2 <- howManyImputations(modelFit1), "name")
