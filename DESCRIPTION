@@ -13,7 +13,7 @@ Authors@R: person("Josh", "Errickson", email = "jerrick@umich.edu",
 License: MIT + file LICENSE
 Encoding: UTF-8
 Suggests:
-    testthat (>= 2.1.0),
+    tinytest,
     roxygen2,
     jomo,
     mitools

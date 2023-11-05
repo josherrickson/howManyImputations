@@ -1,49 +1,104 @@
-# load.R fixes a bug with devtool's `help` to enable `help` on
-# functions in this package, as well as loading the package
-LOAD=R_PROFILE=load.R
-RCMD=R -q -e
+###################################################
+#################### MaRP v0.3 ####################
+###################################################
 
-.PHONY:interactive
-interactive:
-	@$(LOAD) R -q --no-save
+# What R command should we run?
+RCMD := R -q -e
 
-.PHONY:interactive-emacs
-interactive-emacs:
-	@$(LOAD) emacs -nw -f R
+# Which fields in Description should be considered as "dependencies"?
+DEP_FIELDS := c("Depends", "Imports")
+# This should return a valid R vector
 
-.PHONY:.devtools
-.devtools:
-	@$(RCMD) "devtools:::$(FUNC)($(DEVTOOLSARG))"
+# Get package information
+PKGNAME := $(shell sed -n "s/Package: *\([^ ]*\)/\1/p" DESCRIPTION)
+PKGVERS := $(shell sed -n "s/Version: *\([^ ]*\)/\1/p" DESCRIPTION)
+PKGSRC  := $(shell basename `pwd`)
 
-DEVTOOLSARG=
-.PHONY:dependencies
-dependencies: FUNC=install_deps
-dependencies: DEVTOOLSARG=dependencies=TRUE
+.PHONY: all
+all: check clean
 
-.PHONY:check
-check: FUNC=check
-check: DEVTOOLSARG=incoming=TRUE
+.PHONY: deps
+deps:
+	@Rscript -e\
+   'depstring <- packageDescription(pkg = ".",\
+																		lib.loc = ".",\
+																		fields =$(DEP_FIELDS));\
+		depstring <- Reduce(paste, Filter(\(x) !is.na(x), depstring));\
+		if (!is.null(depstring)) {\
+			deps <- gsub("^R \\\(>= [0-9.]+\\\)", "", depstring);\
+			deps <- gsub(",\\n", ",", deps);\
+			deps <- strsplit(trimws(deps), ",")[[1]];\
+			for (d in deps) {\
+				if (!require(d, quietly = TRUE)) {\
+					cat(paste("Installing", d, "\n"));\
+					install.packages(d)\
+				} else {\
+					cat(paste(d, "already installed\n"))\
+				}\
+			}\
+		} else {\
+			cat("No dependencies\n")\
+		}'
 
-.PHONY:document
-document: FUNC=document
+.PHONY: document
+document:
+	@$(RCMD) "roxygen2::roxygenize()"
 
-.PHONY:test
-test: FUNC=test
+.PHONY: build
+build:
+	cd ..;\
+	R CMD build --no-manual $(PKGSRC)
 
-.PHONY:build
-build: FUNC=build
+.PHONY: build-cran
+build-cran:
+	cd ..;\
+	R CMD build $(PKGSRC)
 
-.PHONY:check_win_old
-check_win_old: FUNC=check_win_oldrelease # Check & build on win-builder old release
+.PHONY: test
+test:
+ifneq (,$(wildcard tests/tinytest.R))
+	@$(RCMD) "tinytest::build_install_test('.')"
+endif
+ifneq (,$(wildcard tests/testthat.R))
+	@$(RCMD) "testthat::test_package('.')"
+endif
 
-.PHONY:check_win
-check_win: FUNC=check_win_release        # ... on win-builder release
+.PHONY: install
+install: build
+	cd ..;\
+	R CMD INSTALL $(PKGNAME)_$(PKGVERS).tar.gz
 
-.PHONY:check_win_dev
-check_win_dev: FUNC=check_win_devel    # ... on win-builder dev
+.PHONY: build-cran
+check: build-cran
+	cd ..;\
+	R CMD check $(PKGNAME)_$(PKGVERS).tar.gz --as-cran
 
-dependencies test check document vignette clean-vignette build check_win check_win_dev check_win_old: .devtools
+.PHONY: vignettes
+vignettes:
+	@echo NYI
 
-.PHONY:clean
+.PHONY: clean
 clean:
-	git clean -Xfd
+	cd ..;\
+	$(RM) -r $(PKGNAME).Rcheck/ $(PKGNAME)_$(PKGVERS).tar.gz
+
+### Uncomment to enable these features
+# .PHONY: coverage
+# coverage:
+# 	@$(RCMD) "covr::report(file = 'coverage.html', browse = TRUE)"
+
+# .PHONY: goodpractice
+# goodpractice:
+# 	@$(RCMD) "goodpractice::gp('.')"
+
+# .PHONY: check_win_old
+# check_win_old:        # Check & build on win-builder old release
+# 	@echo NYI
+
+# .PHONY: check_win
+# check_win:            # ... on win-builder release
+# 	@echo NYI
+
+# .PHONY: check_win_dev
+# check_win_dev:        # ... on win-builder dev
+# 	@echo NYI
