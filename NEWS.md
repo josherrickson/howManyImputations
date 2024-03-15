@@ -1,5 +1,8 @@
 # howManyImputations 0.2.4.9001
 
+- Switch from **testthat** to
+  [**tinytest**](https://CRAN.R-project.org/package=tinytest)
+
 # howManyImputations 0.2.4
 
 - Updated CITATION to use `bibentry()`.
