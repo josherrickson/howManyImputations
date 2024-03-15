@@ -2,9 +2,12 @@
 % Please edit documentation in R/how_many_imputations.R
 \name{how_many_imputations}
 \alias{how_many_imputations}
+\alias{howManyImputations}
 \title{Implements two-stage "how_many_imputations" from von Hippel (2020)}
 \usage{
 how_many_imputations(model, cv = 0.05, alpha = 0.05)
+
+howManyImputations(model, cv = 0.05, alpha = 0.05)
 }
 \arguments{
 \item{model}{Either a \code{mira} object (created by running a model on a

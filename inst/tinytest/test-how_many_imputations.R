@@ -52,5 +52,5 @@ c <- capture.output(tempData <- mice(data, m = 5, maxit = 10, meth = "pmm"))
 modelFit1 <- with(tempData, lm(Temp ~ Ozone + Solar.R + Wind))
 
 hmi1 <- how_many_imputations(modelFit1)
-expect_warning(hmi2 <- howManyImputations(modelFit1), "name")
+hmi2 <- howManyImputations(modelFit1)
 expect_identical(hmi1, hmi2)

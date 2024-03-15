@@ -33,6 +33,7 @@
 #' @importFrom methods is
 #' @importFrom stats plogis qlogis qnorm
 #' @importFrom mice mice as.mira pool
+#' @rdname how_many_imputations
 #'
 #' @references von Hippel, Paul T. "How Many Imputations Do You Need? A Two-stage Calculation Using a Quadratic Rule." Sociological Methods & Research 49.3 (2020): 699-718.
 #'
@@ -75,16 +76,6 @@ how_many_imputations <- function(model,
   ceiling(1 + 1/2*(fmiu/cv)^2)
 }
 
-#' Improper function name, use \code{how_many_imputations()} instead
-#'
-#' @param model See \code{how_many_imputations()}
-#' @param cv See \code{how_many_imputations()}
-#' @param alpha See \code{how_many_imputations()}
-#' @return See \code{how_many_imputations()}
+#' @rdname how_many_imputations
 #' @export
-howManyImputations <- function(model,
-                               cv = .05,
-                               alpha = .05) {
-  warning("Proper function name is how_many_imputations")
-  howManyImputations::how_many_imputations(model, cv, alpha)
-}
+howManyImputations <- how_many_imputations
