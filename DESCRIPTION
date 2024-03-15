@@ -16,6 +16,7 @@ Suggests:
     tinytest,
     roxygen2,
     jomo,
+    Amelia,
     mitools
 RoxygenNote: 7.3.1
 Imports:

@@ -91,7 +91,7 @@ imputed data into something **mice** can understand.
 > a.out <- amelia(freetrade, m = 20, ts = "year", cs = "country")
 > modelFit3 <- with(imputationList(a.out$imputations),
                     lm(tariff ~ polity + pop + gdp.pc + year + country))
-> how_many_imputations(modFit3)
+> how_many_imputations(modelFit3)
 [1] 128
 ```
 

@@ -58,13 +58,20 @@ modelFit1 <- with(impdata1, lm(Temp ~ Ozone + Solar.R + Wind))
 how_many_imputations(modelFit1)
 how_many_imputations(modelFit1, cv = .01)
 
-# Using a non-`mice` library.
+# Using a non-`mice` libraries.
 library(jomo)
 library(mitools) # for the `imputationList` function
 jomodata <- jomo::jomo1(airquality, nburn = 100, nbetween = 100, nimp = 5)
 impdata2 <- mitools::imputationList(split(jomodata, jomodata$Imputation))
 modelfit2 <- with(impdata2, lm(Temp ~ Ozone + Solar.R + Wind))
 how_many_imputations(modelfit2)
+
+library(Amelia)
+data(freetrade)
+a.out <- amelia(freetrade, m = 20, ts = "year", cs = "country")
+modelFit3 <- with(imputationList(a.out$imputations),
+                  lm(tariff ~ polity + pop + gdp.pc + year + country))
+how_many_imputations(modelFit3)
 }
 \references{
 von Hippel, Paul T. "How Many Imputations Do You Need? A Two-stage Calculation Using a Quadratic Rule." Sociological Methods & Research 49.3 (2020): 699-718.
