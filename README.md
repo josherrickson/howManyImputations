@@ -71,15 +71,28 @@ package produces a `list` of models as the output of its modeling step,
 (using [**mitools**](https://cran.r-project.org/package=mitools) to convert the
 output of `jomo::jomo1()` into a list via `mitools::imputationList()`).
 
-
 ```
 > library(jomo)
 > library(mitools) # for the `imputationList` function
 > jomodata <- jomo1(airquality, nburn = 100, nbetween = 100, nimp = 5)
 > impdata2 <- imputationList(split(jomodata, jomodata$Imputation))
-> modelfit2 <- with(impdata2, lm(Temp ~ Ozone + Solar.R + Wind))
-> how_many_imputations(modelfit2)
+> modelFit2 <- with(impdata2, lm(Temp ~ Ozone + Solar.R + Wind))
+> how_many_imputations(modelFit2)
 [1] 77
+```
+
+Here's another example using
+[**Amelia**](https://CRAN.R-project.org/package=Amelia), again converting the
+imputed data into something **mice** can understand.
+
+```
+> library(Amelia)
+> data(freetrade)
+> a.out <- amelia(freetrade, m = 20, ts = "year", cs = "country")
+> modelFit3 <- with(imputationList(a.out$imputations),
+                    lm(tariff ~ polity + pop + gdp.pc + year + country))
+> how_many_imputations(modFit3)
+[1] 128
 ```
 
 ## Reference
