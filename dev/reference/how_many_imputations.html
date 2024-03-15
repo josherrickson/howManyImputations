@@ -174,7 +174,7 @@ obtained after running some number of imputations. Therefore, von Hippel
 <span class="r-in"><span><span class="fu">how_many_imputations</span><span class="op">(</span><span class="va">modelFit1</span>, cv <span class="op">=</span> <span class="fl">.01</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1394</span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># Using a non-`mice` library.</span></span></span>
+<span class="r-in"><span><span class="co"># Using a non-`mice` libraries.</span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">jomo</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">mitools</span><span class="op">)</span> <span class="co"># for the `imputationList` function</span></span></span>
 <span class="r-in"><span><span class="va">jomodata</span> <span class="op">&lt;-</span> <span class="fu">jomo</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/jomo/man/jomo1.html" class="external-link">jomo1</a></span><span class="op">(</span><span class="va">airquality</span>, nburn <span class="op">=</span> <span class="fl">100</span>, nbetween <span class="op">=</span> <span class="fl">100</span>, nimp <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></span>
@@ -201,6 +201,101 @@ obtained after running some number of imputations. Therefore, von Hippel
 <span class="r-in"><span><span class="va">modelfit2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/with.html" class="external-link">with</a></span><span class="op">(</span><span class="va">impdata2</span>, <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">Temp</span> <span class="op">~</span> <span class="va">Ozone</span> <span class="op">+</span> <span class="va">Solar.R</span> <span class="op">+</span> <span class="va">Wind</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">how_many_imputations</span><span class="op">(</span><span class="va">modelfit2</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 45</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://gking.harvard.edu/amelia" class="external-link">Amelia</a></span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Loading required package: Rcpp</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ## </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ## Amelia II: Multiple Imputation</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ## (Version 1.8.1, built: 2022-11-18)</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ## Copyright (C) 2005-2024 James Honaker, Gary King and Matthew Blackwell</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ## Refer to http://gking.harvard.edu/amelia/ for more information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ## </span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">freetrade</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">a.out</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/Amelia/man/amelia.html" class="external-link">amelia</a></span><span class="op">(</span><span class="va">freetrade</span>, m <span class="op">=</span> <span class="fl">20</span>, ts <span class="op">=</span> <span class="st">"year"</span>, cs <span class="op">=</span> <span class="st">"country"</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -- Imputation 1 --</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1  2  3  4  5  6  7  8  9 10 11 12 13 14 15</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -- Imputation 2 --</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1  2  3  4  5  6  7  8  9 10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -- Imputation 3 --</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1  2  3  4  5  6  7  8  9 10 11 12</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -- Imputation 4 --</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -- Imputation 5 --</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1  2  3  4  5  6  7  8  9 10 11 12 13</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -- Imputation 6 --</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -- Imputation 7 --</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -- Imputation 8 --</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -- Imputation 9 --</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1  2  3  4  5  6  7  8  9 10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -- Imputation 10 --</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -- Imputation 11 --</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1  2  3  4  5  6  7  8  9 10 11 12 13</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -- Imputation 12 --</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -- Imputation 13 --</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -- Imputation 14 --</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1  2  3  4  5  6  7  8  9 10 11</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -- Imputation 15 --</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1  2  3  4  5  6  7  8  9 10 11 12 13 14 15</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -- Imputation 16 --</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -- Imputation 17 --</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1  2  3  4  5  6  7  8  9 10 11 12 13 14 15</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -- Imputation 18 --</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1  2  3  4  5  6  7  8  9 10 11 12 13 14</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -- Imputation 19 --</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -- Imputation 20 --</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1  2  3  4  5  6  7  8  9 10 11 12 13 14 15</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-in"><span><span class="va">modelFit3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/with.html" class="external-link">with</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/mitools/man/imputationList.html" class="external-link">imputationList</a></span><span class="op">(</span><span class="va">a.out</span><span class="op">$</span><span class="va">imputations</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>                  <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">tariff</span> <span class="op">~</span> <span class="va">polity</span> <span class="op">+</span> <span class="va">pop</span> <span class="op">+</span> <span class="va">gdp.pc</span> <span class="op">+</span> <span class="va">year</span> <span class="op">+</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">how_many_imputations</span><span class="op">(</span><span class="va">modelFit3</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 112</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
