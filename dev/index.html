@@ -123,9 +123,17 @@
 &gt; library(mitools) # for the `imputationList` function
 &gt; jomodata &lt;- jomo1(airquality, nburn = 100, nbetween = 100, nimp = 5)
 &gt; impdata2 &lt;- imputationList(split(jomodata, jomodata$Imputation))
-&gt; modelfit2 &lt;- with(impdata2, lm(Temp ~ Ozone + Solar.R + Wind))
-&gt; how_many_imputations(modelfit2)
+&gt; modelFit2 &lt;- with(impdata2, lm(Temp ~ Ozone + Solar.R + Wind))
+&gt; how_many_imputations(modelFit2)
 [1] 77</code></pre>
+<p>Here’s another example using <a href="https://CRAN.R-project.org/package=Amelia" class="external-link"><strong>Amelia</strong></a>, again converting the imputed data into something <strong>mice</strong> can understand.</p>
+<pre><code>&gt; library(Amelia)
+&gt; data(freetrade)
+&gt; a.out &lt;- amelia(freetrade, m = 20, ts = "year", cs = "country")
+&gt; modelFit3 &lt;- with(imputationList(a.out$imputations),
+                    lm(tariff ~ polity + pop + gdp.pc + year + country))
+&gt; how_many_imputations(modFit3)
+[1] 128</code></pre>
 </div>
 <div class="section level2">
 <h2 id="reference">Reference<a class="anchor" aria-label="anchor" href="#reference"></a>
