@@ -1,5 +1,5 @@
 # Test environments
-* local OS X install, R 4.2.2
+* local OS X install, R 4.3.3
 * win-builder (old, devel, release)
 
 ## R CMD check results
@@ -20,4 +20,4 @@ Found the following (possibly) invalid URLs:
 
 ## Comments about NOTEs
 
-- The URL works as of 2/4/2023.
+- The URL works as of 3/15/2024.
