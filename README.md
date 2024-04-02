@@ -95,6 +95,17 @@ imputed data into something **mice** can understand.
 [1] 128
 ```
 
+## Rebuilding website
+
+Run `make build_site` (or, directly, `devtools::build_site(quiet = FALSE)`) to
+build the site. Assuming the package is currently on a [development
+version](https://r-pkgs.org/lifecycle.html#sec-lifecycle-version-number-tidyverse),
+this will build the dev site to docs/dev. To build the release site, checkout
+the most recent [tagged
+release](https://github.com/josherrickson/howManyImputations/tags), e.g. `git
+checkout v0.2.5`. Build the site in that commit, which should populate docs/.
+Checkout back to main, and both pkgdown sites should be build.
+
 ## Reference
 
 Von Hippel, Paul T. "How many imputations do you need? A two-stage calculation
