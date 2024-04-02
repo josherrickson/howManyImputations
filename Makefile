@@ -73,6 +73,11 @@ check: build-cran
 	cd ..;\
 	R CMD check $(PKGNAME)_$(PKGVERS).tar.gz --as-cran
 
+# Update the pkgdown site
+.PHONY:build_site
+build_site:
+	@R -q -e "devtools:::build_site(quiet = FALSE)"
+
 .PHONY: vignettes
 vignettes:
 	@echo NYI
